@@ -43,7 +43,9 @@
         #dashboard-container {
             flex-grow: 1;
             width: auto; 
-            max-width: none; 
+            max-width: none;
+            /* THIS IS THE NEW LINE */
+            min-width: 1220px; 
         }
 
         .container h2 {
@@ -141,12 +143,11 @@
             <script type='text/javascript'>
                 var divElement = document.getElementById('viz1754506756758');
                 var vizElement = divElement.getElementsByTagName('object')[0];
-                // REMOVED the fixed pixel sizing script to allow CSS to control the size.
                 var scriptElement = document.createElement('script');
                 scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
                 vizElement.parentNode.insertBefore(scriptElement, vizElement);
             </script>
-            </div>
+        </div>
 
         <div id="chatbot-container" class="container">
             <iframe src="https://kpi-dashboard-live.onrender.com/" title="Chat Bot"></iframe> 
