@@ -54,8 +54,6 @@
             flex-shrink: 0; 
         }
 
-        /* Adjusted iframe and tableau styles for better integration */
-        #dashboard-container iframe, 
         #dashboard-container .tableauPlaceholder,
         #dashboard-container object {
             width: 100% !important;
@@ -122,28 +120,28 @@
         <div id="dashboard-container" class="container">
             <h2>KPI Dashboard</h2>
             
-            <div class='tableauPlaceholder' id='viz1754505556152' style='position: relative; width: 100%; height: 100%;'>
-                <noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;T5&#47;T53TX8X3P&#47;1_rss.png' style='border: none' /></a></noscript>
+            <div class='tableauPlaceholder' id='viz1754506756758' style='position: relative; width: 100%; height: 100%;'>
+                <noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;KP&#47;KPI-Dashboard_17545035814460&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript>
                 <object class='tableauViz' style='display:none; width: 100%; height: 100%;'>
                     <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
                     <param name='embed_code_version' value='3' /> 
-                    <param name='path' value='shared/T53TX8X3P' /> 
+                    <param name='path' value='views/KPI-Dashboard_17545035814460/Dashboard1?:language=de-DE&amp;:embed=true&amp;:sid=&amp;:redirect=auth' /> 
                     <param name='toolbar' value='yes' />
-                    
-                    <param name='width' value='100%' />
-                    <param name='height' value='100%' />
-                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;T5&#47;T53TX8X3P&#47;1.png' /> 
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;KP&#47;KPI-Dashboard_17545035814460&#47;Dashboard1&#47;1.png' /> 
                     <param name='animate_transition' value='yes' />
                     <param name='display_static_image' value='yes' />
                     <param name='display_spinner' value='yes' />
                     <param name='display_overlay' value='yes' />
                     <param name='display_count' value='yes' />
-                    <param name'language' value='de-DE' />
+                    <param name='language' value='de-DE' />
+                    <param name='width' value='100%' />
+                    <param name='height' value='100%' />
                 </object>
             </div>
             <script type='text/javascript'>
-                var divElement = document.getElementById('viz1754505556152');
+                var divElement = document.getElementById('viz1754506756758');
                 var vizElement = divElement.getElementsByTagName('object')[0];
+                // REMOVED the fixed pixel sizing script to allow CSS to control the size.
                 var scriptElement = document.createElement('script');
                 scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
                 vizElement.parentNode.insertBefore(scriptElement, vizElement);
