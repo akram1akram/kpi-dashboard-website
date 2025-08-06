@@ -54,13 +54,23 @@
             flex-shrink: 0; 
         }
 
-        iframe {
+        /* Adjusted iframe and tableau styles for better integration */
+        #dashboard-container iframe, 
+        #dashboard-container .tableauPlaceholder,
+        #dashboard-container object {
+            width: 100% !important;
+            height: 100% !important;
+            min-height: 800px;
+        }
+        
+        #chatbot-container iframe {
             border: 1px solid #555; 
             box-sizing: border-box;
             display: block; 
             border-radius: 4px; 
             width: 100%; 
-            flex-grow: 1; 
+            height: 100%;
+            pointer-events: none; 
         }
 
         #chatbot-container {
@@ -74,11 +84,6 @@
             cursor: pointer; 
             position: relative; 
         }
-        
-         #chatbot-container iframe {
-             pointer-events: none; 
-             height: 100%; 
-         }
 
         #chatbot-container.chatbot-expanded {
             transform: translateX(0); 
@@ -115,17 +120,33 @@
     <div class="main-content">
 
         <div id="dashboard-container" class="container">
-            <h2>Looker Studio Report</h2>
-            <iframe 
-                    width="100%" 
-                    style="border:0; min-height: 600px; height: 100%;" 
-                    src="https://lookerstudio.google.com/embed/reporting/93956de2-25a1-46ad-9103-04b61b402e67/page/3nTFF" 
-                    frameborder="0" 
-                    allowfullscreen 
-                    sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-                    title="Looker Studio Report">
-            </iframe>
-        </div>
+            <h2>KPI Dashboard</h2>
+            
+            <div class='tableauPlaceholder' id='viz1754505556152' style='position: relative; width: 100%; height: 100%;'>
+                <noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;T5&#47;T53TX8X3P&#47;1_rss.png' style='border: none' /></a></noscript>
+                <object class='tableauViz' style='display:none; width: 100%; height: 100%;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                    <param name='embed_code_version' value='3' /> 
+                    <param name='path' value='shared/T53TX8X3P' /> 
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;T5&#47;T53TX8X3P&#47;1.png' /> 
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='de-DE' />
+                </object>
+            </div>
+            <script type='text/javascript'>
+                var divElement = document.getElementById('viz1754505556152');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                // Removed the fixed pixel size script from Tableau to allow CSS to control it.
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+            </div>
 
         <div id="chatbot-container" class="container">
             <iframe src="https://kpi-dashboard-live.onrender.com/" title="Chat Bot"></iframe> 
@@ -149,4 +170,3 @@
 
 </body>
 </html>
-
