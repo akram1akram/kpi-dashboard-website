@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KPI Dashboard and Chat Bot</title>
+    
     <style>
+        @import url('https://public.tableau.com/viz/fonts/tableau/tableau.css');
+
         body {
-            background-color: #2c2c2e; 
-            color: #f0f0f0; 
-            font-family: sans-serif;
+            background-color: #f4f4f4; 
+            color: #333333;           
+            font-family: 'Tableau', sans-serif;
             margin: 0; 
             padding: 15px; 
             display: flex; 
@@ -30,10 +33,10 @@
         }
 
         .container {
-            border: 1px solid #555; 
+            border: 1px solid #dddddd;   
             padding: 10px;
             box-sizing: border-box;
-            background-color: #3a3a3c; 
+            background-color: #ffffff;   
             border-radius: 8px; 
             display: flex; 
             flex-direction: column; 
@@ -41,16 +44,19 @@
         }
 
         #dashboard-container {
-            flex-grow: 1;
-            width: auto; 
-            max-width: none;
+            width: 950px;
+            height: 800px;
+            align-self: flex-start;
+            flex-shrink: 0;
         }
 
+        /* --- CHANGE IS HERE --- */
         .container h2 {
+            font-family: 'Tableau', sans-serif; /* Explicitly set the font here */
             margin-top: 0;
             margin-bottom: 10px; 
             text-align: center;
-            color: #f0f0f0;
+            color: #333333;           
             flex-shrink: 0; 
         }
 
@@ -58,11 +64,10 @@
         #dashboard-container object {
             width: 100% !important;
             height: 100% !important;
-            min-height: 800px;
         }
         
         #chatbot-container iframe {
-            border: 1px solid #555; 
+            border: 1px solid #dddddd;   
             box-sizing: border-box;
             display: block; 
             border-radius: 4px; 
@@ -73,10 +78,12 @@
 
         #chatbot-container {
             width: 350px; 
+            height: 800px; 
+            align-self: flex-start; 
             flex-shrink: 0;
             flex-grow: 0; 
             transform: translateX(calc(100% - 40px)); 
-            opacity: 0.85; 
+            opacity: 0.95; 
             pointer-events: auto; 
             transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
             cursor: pointer; 
@@ -100,7 +107,7 @@
             left: -8px; 
             height: 80px; 
             transform: translateY(-50%); 
-            background-color: #888; 
+            background-color: #cccccc;   
             border-radius: 8px 0 0 8px; 
             opacity: 1; 
             transition: opacity 0.2s ease-in-out; 
@@ -156,4 +163,16 @@
     <script>
         const chatbotContainer = document.getElementById('chatbot-container');
         if (chatbotContainer) {
-            chatbotContainer.addEventListener('
+            chatbotContainer.addEventListener('mouseenter', () => {
+                chatbotContainer.classList.add('chatbot-expanded');
+            });
+            chatbotContainer.addEventListener('mouseleave', () => {
+                chatbotContainer.classList.remove('chatbot-expanded');
+            });
+        } else {
+            console.error("Chatbot container element not found!");
+        }
+    </script>
+
+</body>
+</html>
